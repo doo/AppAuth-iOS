@@ -89,10 +89,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly, nullable)
     NSDictionary<NSString *, NSObject<NSCopying> *> *additionalParameters;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnullability"
+
 /*! @internal
     @brief Unavailable. Please use initWithParameters:.
  */
-- (instancetype)init NS_UNAVAILABLE;
+- (nullable instancetype)init NS_UNAVAILABLE;
+
+#pragma clang diagnostic pop
 
 /*! @brief Designated initializer.
     @param request The serviced request.
@@ -101,7 +106,7 @@ NS_ASSUME_NONNULL_BEGIN
         properties are populated. Non-normative parameters are placed in the
         @c #additionalParameters dictionary.
  */
-- (instancetype)initWithRequest:(OIDAuthorizationRequest *)request
+- (nullable instancetype)initWithRequest:(OIDAuthorizationRequest *)request
     parameters:(NSDictionary<NSString *, NSObject<NSCopying> *> *)parameters
     NS_DESIGNATED_INITIALIZER;
 
