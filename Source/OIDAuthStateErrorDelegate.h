@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
         @c OIDAuthState.updateWithAuthorizationError:.
     @see https://tools.ietf.org/html/rfc6749#section-5.2
  */
-- (void)authState:(OIDAuthState *)state didEncounterAuthorizationError:(NSError *)error;
+- (void)authState:(OIDAuthState *)state didEncounterAuthorizationError:(nullable NSError *)error;
 
 @optional
 

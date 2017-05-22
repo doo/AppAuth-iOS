@@ -71,7 +71,7 @@ typedef void (^OIDAuthStateAuthorizationCallback)(OIDAuthState *_Nullable authSt
 /*! @brief The most recent authorization response used to update the authorization state. For the
         implicit flow, this will contain the latest access token.
  */
-@property(nonatomic, readonly) OIDAuthorizationResponse *lastAuthorizationResponse;
+@property(nonatomic, readonly, nullable) OIDAuthorizationResponse *lastAuthorizationResponse;
 
 /*! @brief The most recent token response used to update this authorization state. This will
         contain the latest access token.
@@ -206,7 +206,7 @@ typedef void (^OIDAuthStateAuthorizationCallback)(OIDAuthState *_Nullable authSt
         The latest error received is stored in @c #authorizationError. Note: that after unarchiving
         this object, the \NSError_userInfo property of this error will be nil.
  */
-- (void)updateWithAuthorizationError:(NSError *)authorizationError;
+- (void)updateWithAuthorizationError:(nullable NSError *)authorizationError;
 
 /*! @brief Calls the block with a valid access token (refreshing it first, if needed), or if a
         refresh was needed and failed, with the error that caused it to fail.

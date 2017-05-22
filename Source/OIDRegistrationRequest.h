@@ -101,7 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! @brief Constructs an @c NSURLRequest representing the registration request.
     @return An @c NSURLRequest representing the registration request.
  */
-- (NSURLRequest *)URLRequest;
+- (nullable NSURLRequest *)URLRequest;
 
 @end
 
