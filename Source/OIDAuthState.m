@@ -381,7 +381,7 @@ static const NSUInteger kExpiryTimeTolerance = 60;
   [self didChangeState];
 }
 
-- (void)updateWithAuthorizationError:(NSError *)oauthError {
+- (void)updateWithAuthorizationError:(nullable NSError *)oauthError {
   _authorizationError = oauthError;
 
   [self didChangeState];
